@@ -1,0 +1,54 @@
+.header {
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.animation {
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  box-shadow: 0 0 0 #000000;
+
+  /*transition-duration: 200ms; сколько будет проходить */
+  /*transition-property:box-shadow, background-color;  что будет менятся (all влияет на все изменяемые свойства-лучше не использовать)*/
+  /*transition-timing-function: ease; функция по какой будут проходить изменения*/
+  /*transition-delay: 0.1s; задержка*/
+
+  transition: box-shadow 500ms linear 0.1ms, background-color 200ms ease 0.5ms;
+
+
+animation-name: animation_1; /* название */
+  animation-duration: 3s; /* продолжительность */
+  animation-delay: 1s; /* задержка */
+  animation-iteration-count: infinite; /* количество повторений */
+  animation-fill-mode: both; /* состояние елемента перед началом и по завершению анимации */
+  animation-direction: alternate-reverse; /* направление проигрования */
+  animation-timing-function: linear; /* тайменговоя функция, управляет плавносью воспроизведения */
+  animation-play-state: paused; /* управление анимацией, запусать, приастанавливать */
+
+ /* animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction;  - сокращенная запись */
+
+  animation: animation_1 2s, animation_2 5s; /* последовательность запуска нескольких анимаций */
+
+}
+
+
+@keyframes animation_1 {  /* ключ анимации (ключевые кадры) */
+  0% {
+    margin-left: 0;
+      }
+  50% {
+    margin-top: 50px;
+  }
+  100% {
+    margin-left: 300px;
+  }
+}
+
+
+.animation:hover {
+  box-shadow: 10px 10px 5px #000000;
+  background-color: red;
+}
